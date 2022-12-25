@@ -52,6 +52,9 @@ app.post("/posts", verifiedToken, upload.single("picture"), createPost);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
+app.use("/test", (req, res) => {
+  res.send("SUCCESS");
+});
 
 // /MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
